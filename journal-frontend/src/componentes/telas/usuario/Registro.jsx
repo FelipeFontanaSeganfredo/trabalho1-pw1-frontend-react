@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Card } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthContext';
-import { registerUsuario } from '../../../servicos/LoginEntrarServico'; 
+import { registerUsuario } from '../../../servicos/LoginEntrarServico';// ajuste o path se necessário
 
 function Registro() {
     const [nome, setNome] = useState('');
@@ -26,7 +26,7 @@ function Registro() {
         }
 
         try {
-            const data = await registerUsuario(nome, email, senha); 
+            const data = await registerUsuario(nome, email, senha); // usando service agora
 
             Swal.fire({
                 icon: 'success',
@@ -36,7 +36,7 @@ function Registro() {
             });
 
             login(data.usuario, data.token);
-            navigate('/');
+            navigate('/login');
         } catch (err) {
             Swal.fire({
                 icon: 'error',

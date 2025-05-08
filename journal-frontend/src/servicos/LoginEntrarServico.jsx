@@ -21,19 +21,11 @@ export async function registerUsuario(nome, email, senha) {
       email,
       senha
     });
-
-    // Armazena o token e os dados do usuário
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
-    }
-
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || 'Erro ao registrar usuário';
   }
 }
-
 
 // Função para fazer login
 export async function loginUsuario(email, senha) {
