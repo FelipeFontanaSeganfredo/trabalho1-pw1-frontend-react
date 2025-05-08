@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_ENDERECO_API;
+//const API_URL = process.env.REACT_APP_ENDERECO_API;
+
+const API_URL = 'https://trabalho1-pw1-journal.onrender.com'
 
 // Configuração básica do Axios
 const api = axios.create({
