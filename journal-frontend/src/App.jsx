@@ -59,6 +59,9 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
+  console.log("API URL:", process.env.REACT_APP_ENDERECO_API);
+
   return (
     <AuthProvider>
         <RouterProvider router={router} />
