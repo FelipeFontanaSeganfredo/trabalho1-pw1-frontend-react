@@ -4,6 +4,8 @@ import { Form, Button, Container, Card, Alert } from 'react-bootstrap';
 import { AuthContext } from '../../../contexts/AuthContext';
 
 
+const LOGIN_URL = 'https://trabalho1-pw1-journal.onrender.com/login';
+
 function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
