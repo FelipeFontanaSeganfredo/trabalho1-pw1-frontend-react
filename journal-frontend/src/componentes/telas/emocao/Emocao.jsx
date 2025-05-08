@@ -7,7 +7,6 @@ import Tabela from './Tabela';
 //} from '../../../servicos/CategoriaServico';
 
 import {
-    buscarEmocaoPorId,
     buscarEmocoes
 } from '../../../servicos/EmocaoServico'
 

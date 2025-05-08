@@ -6,7 +6,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Menu from './componentes/Menu'
 import Home from './componentes/telas/Home'
 import Sobre from "./componentes/telas/Sobre";
-import Emocao from './componentes/telas/emocao/Emocao'
 import PrivateRoutes from './componentes/PrivateRoutes'
 import Login from "./componentes/telas/usuario/Login";
 import Registro from "./componentes/telas/usuario/Registro";

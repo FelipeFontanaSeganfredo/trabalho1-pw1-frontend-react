@@ -2,10 +2,9 @@ import { useContext } from 'react'
 import EmocaoContext from './EmocaoContext';
 import Alerta from '../../comuns/Alerta';
 import Table from 'react-bootstrap/Table';
-import { Button } from 'react-bootstrap';
 
 function Tabela() {
-    const { alerta, listaObjetos, remover } = useContext(EmocaoContext);
+    const { alerta, listaObjetos} = useContext(EmocaoContext);
 
     return (
         <div style={{ padding: '20px' }}>
