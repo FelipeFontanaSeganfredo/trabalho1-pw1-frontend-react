@@ -16,16 +16,24 @@ const api = axios.create({
 // Função para registrar um usuário
 export async function registerUsuario(nome, email, senha) {
   try {
-    const response = await api.post('/registro', {
+    const response = await api.post('/register', {
       nome,
       email,
       senha
     });
+
+    // Armazena o token e os dados do usuário
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
+    }
+
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || 'Erro ao registrar usuário';
   }
 }
+
 
 // Função para fazer login
 export async function loginUsuario(email, senha) {
