@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Card, Alert } from 'react-bootstrap';
 import { AuthContext } from '../../../contexts/AuthContext';
 
-const LOGIN_URL = 'http://localhost:3002/usuario/login'
 
 function Login() {
     const [email, setEmail] = useState('');
