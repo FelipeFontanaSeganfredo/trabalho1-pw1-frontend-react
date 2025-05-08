@@ -4,7 +4,7 @@ import { Form, Button, Container, Card } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthContext';
 
-const REGISTER_URL = 'https://trabalho1-pw1-journal.onrender.com/register';
+const REGISTER_URL = 'https://trabalho1-pw1-journal.onrender.com/usuario/register';
 
 function Registro() {
     const [nome, setNome] = useState('');
