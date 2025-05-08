@@ -2,9 +2,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Card, Alert } from 'react-bootstrap';
 import { AuthContext } from '../../../contexts/AuthContext';
-
-
-const LOGIN_URL = 'https://trabalho1-pw1-journal.onrender.com/usuario/login';
+import { loginUsuario } from '../../../servicos/LoginEntrarServico'; // ajuste esse path se necessário
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -18,22 +16,11 @@ function Login() {
         setErro('');
 
         try {
-            const resposta = await fetch(LOGIN_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, senha }),
-            });
-
-            const data = await resposta.json();
-
-            if (resposta.ok) {
-                login(data.usuario, data.token);
-                navigate('/');
-            } else {
-                setErro(data.message || 'Erro ao fazer login');
-            }
+            const data = await loginUsuario(email, senha); // agora usando o service
+            login(data.usuario, data.token); // atualiza contexto global
+            navigate('/');
         } catch (err) {
-            setErro('Erro de conexão com o servidor');
+            setErro(err.toString());
         }
     };
 

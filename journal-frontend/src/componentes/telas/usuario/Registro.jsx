@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Card } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthContext';
-
-const REGISTER_URL = 'https://trabalho1-pw1-journal.onrender.com/usuario/register';
+import { registerUsuario } from '../../../servicos/LoginEntrarServico'; 
 
 function Registro() {
     const [nome, setNome] = useState('');
@@ -27,36 +26,22 @@ function Registro() {
         }
 
         try {
-            const resposta = await fetch(REGISTER_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, email, senha }),
+            const data = await registerUsuario(nome, email, senha); 
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Cadastro realizado com sucesso!',
+                showConfirmButton: false,
+                timer: 2000,
             });
 
-            const data = await resposta.json();
-
-            if (resposta.ok) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Cadastro realizado com sucesso!',
-                    showConfirmButton: false,
-                    timer: 2000,
-                });
-
-                login(data.usuario, data.token);
-                navigate('/');
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Erro no cadastro',
-                    text: data.message || 'Erro ao registrar nova conta.',
-                });
-            }
+            login(data.usuario, data.token);
+            navigate('/');
         } catch (err) {
             Swal.fire({
                 icon: 'error',
-                title: 'Erro de conexão',
-                text: 'Não foi possível conectar ao servidor.',
+                title: 'Erro no cadastro',
+                text: err.toString() || 'Erro ao registrar nova conta.',
             });
         }
     };
