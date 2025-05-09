@@ -1,9 +1,8 @@
 import { getAuthHeaders } from './LoginEntrarServico';
 import axios from 'axios';
 
-//const API_URL = `${process.env.REACT_APP_ENDERECO_API}/emocao`;
+const API_URL = `${process.env.REACT_APP_ENDERECO_API}/emocao`;
 
-const API_URL = 'https://trabalho1-pw1-journal.onrender.com/emocao'
 export async function buscarEmocoes() {
   try {
     const response = await axios.get(API_URL, getAuthHeaders());

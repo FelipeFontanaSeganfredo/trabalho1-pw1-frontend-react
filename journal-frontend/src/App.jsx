@@ -12,6 +12,7 @@ import Registro from "./componentes/telas/usuario/Registro";
 import Objetivo from './componentes/telas/objetivo/Objetivo'
 import EntradaDetalhes from "./componentes/telas/entrada/EntradaDetalhes";
 import Entrada from "./componentes/telas/entrada/Entrada";
+import PerfilUsuario from "./componentes/telas/usuario/PerfilUsuario";
 import { AuthProvider } from "./contexts/AuthContext";
 
 
@@ -52,6 +53,14 @@ const router = createBrowserRouter([
           <PrivateRoutes>
             <EntradaDetalhes />
           </PrivateRoutes>
+        )
+      },
+      {
+        path: "/usuario/:id",
+        element: (
+         <PrivateRoutes>
+           <PerfilUsuario />
+         </PrivateRoutes>
         )
       }
     ]

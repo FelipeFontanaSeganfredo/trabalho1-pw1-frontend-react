@@ -1,9 +1,7 @@
 import { getAuthHeaders } from './LoginEntrarServico';
 import axios from 'axios';
 
-//const API_URL = `${process.env.REACT_APP_ENDERECO_API}/entradas`;
-
-const API_URL = 'https://trabalho1-pw1-journal.onrender.com/entradas'
+const API_URL = `${process.env.REACT_APP_ENDERECO_API}/entradas`;
 
 // Buscar todas as entradas do usuário
 export async function buscarEntradas() {

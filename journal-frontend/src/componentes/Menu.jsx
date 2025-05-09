@@ -29,6 +29,7 @@ function Menu() {
                                 <>
                                     <NavLink className="nav-link" to="/entradas">Registros Diários</NavLink>
                                     <NavLink className="nav-link" to="/objetivos">Objetivos</NavLink>
+                                    <NavLink className="nav-link" to={`/usuario/${usuario.id}`}>Meu Perfil</NavLink>
                                     <NavLink className="nav-link" onClick={logout}>Sair</NavLink>
                                 </>
                             )}

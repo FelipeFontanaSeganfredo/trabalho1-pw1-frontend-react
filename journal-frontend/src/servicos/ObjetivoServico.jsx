@@ -1,9 +1,8 @@
 import { getAuthHeaders } from './LoginEntrarServico';
 import axios from 'axios';
 
-//const API_URL = `${process.env.REACT_APP_ENDERECO_API}/objetivos`;
+const API_URL = `${process.env.REACT_APP_ENDERECO_API}/objetivos`;
 
-const API_URL = 'https://trabalho1-pw1-journal.onrender.com/objetivos'
 
 // Buscar todos os objetivos do usuário logado
 export async function buscarObjetivos() {
