@@ -103,25 +103,6 @@ function EntradaDetalhes() {
                         </div>
                     </div>
                 </Card.Body>
-                <Card.Footer className="d-flex justify-content-end gap-2">
-                    <Button 
-                        variant="primary"
-                        onClick={() => navigate(`/entradas/editar/${entrada.id}`)}
-                    >
-                        Editar
-                    </Button>
-                    <Button 
-                        variant="outline-danger"
-                        onClick={() => {
-                            if (window.confirm('Deseja realmente excluir esta entrada?')) {
-                                // Aqui você pode chamar a função de exclusão
-                                navigate('/entradas');
-                            }
-                        }}
-                    >
-                        Excluir
-                    </Button>
-                </Card.Footer>
             </Card>
         </Container>
     );
